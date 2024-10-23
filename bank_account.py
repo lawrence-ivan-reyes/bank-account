@@ -24,7 +24,9 @@ class BankAccount:
         print(f"Your current account balance is: ${self.balance}")
         return self.balance
     
-    def add_interest(self):
+    def add_interest(self, balance):
         interest = self.balance * 0.00083
         balance += interest
         print(f"You have gained an interest of ${interest}, bringing your total current balance to: ${self.balance}")
+
+
