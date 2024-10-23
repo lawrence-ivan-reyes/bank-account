@@ -24,9 +24,11 @@ class BankAccount:
         print(f"Your current account balance is: ${self.balance}")
         return self.balance
     
-    def add_interest(self, balance):
+    def add_interest(self):
         interest = self.balance * 0.00083
-        balance += interest
+        self.balance += interest
         print(f"You have gained an interest of ${interest}, bringing your total current balance to: ${self.balance}")
 
+    def print_statement(self):
+        print(f"{self.full_name}\nAccount No.: {self.account_number}\nBalance: {self.balance}") # figure out a way to hide the first 4 account numbers
 
