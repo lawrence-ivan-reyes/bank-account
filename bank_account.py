@@ -10,18 +10,19 @@ class BankAccount:
     # class methods
     def deposit(self, amount):
         self.balance += amount 
-        print(f"Amount Deposited: ${amount} New Balance: ${self.balance}")
+        print(f"Amount Deposited: ${amount} > New Balance: ${self.balance}")
 
     def withdraw(self, amount):
-        self.balance -= amount
+        amount += self.balance
         if amount > self.balance:
-            print("Insufficient funds. You have also been charged an overdraft fee of $10.")
             self.balance -= 10
+            print(f"Insufficient funds. You have also been charged an overdraft fee of $10.\nYour new balance is: ${self.balance}")
         else: 
-            print(f"Amount Withdrawn: ${amount} New Balance: ${self.balance}")
+            self.balance -= amount
+            print(f"Amount Withdrawn: ${amount} > New Balance: ${self.balance}")
 
     def get_balance(self):
-        print(f"Your current account balance is: ${self.balance}")
+        print(f"Your current account balance is ${self.balance}.")
         return self.balance
     
     def add_interest(self):
@@ -32,3 +33,16 @@ class BankAccount:
     def print_statement(self):
         print(f"{self.full_name}\nAccount No.: {self.account_number}\nBalance: {self.balance}") # figure out a way to hide the first 4 account numbers
 
+# 3 different bank accounts
+
+user_harry = BankAccount("Harry Potter")
+user_harry.deposit(100)
+user_harry.withdraw(50)
+
+user_ron = BankAccount("Ron Weasley")
+user_ron.deposit(150)
+user_ron.withdraw(200)
+
+user_hermione = BankAccount("Hermione Granger")
+user_hermione.deposit(200)
+user_hermione.withdraw(100)
