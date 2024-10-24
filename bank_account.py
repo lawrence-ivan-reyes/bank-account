@@ -34,15 +34,25 @@ class BankAccount:
         print(f"{self.full_name}\nAccount No.: {self.account_number}\nBalance: {self.balance}") # figure out a way to hide the first 4 account numbers
 
 # 3 different bank accounts
-
 user_harry = BankAccount("Harry Potter")
 user_harry.deposit(100)
 user_harry.withdraw(50)
+user_harry.get_balance()
+user_harry.add_interest()
+user_harry.print_statement()
 
 user_ron = BankAccount("Ron Weasley")
 user_ron.deposit(150)
 user_ron.withdraw(200)
+user_ron.get_balance()
+user_ron.add_interest()
+user_ron.print_statement()
 
 user_hermione = BankAccount("Hermione Granger")
 user_hermione.deposit(200)
 user_hermione.withdraw(100)
+user_hermione.get_balance()
+user_hermione.add_interest()
+user_hermione.print_statement()
+
+# note: fix decimal places 
