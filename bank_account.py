@@ -1,11 +1,12 @@
 import random
 
 class BankAccount:
-    def __init__(self, full_name):
+    def __init__(self, full_name, account_type="checking"): # stretch challenge 1: initializing account type to checking at first
         # attributes for the BankAccount class
         self.full_name = full_name
         self.account_number = random.randint(10000000, 99999999) # randomly generated 8 digit number, unique per account
         self.balance = 0
+        self.account_type = account_type.lower() # stretch challenge 1: converting to lowercase for case insensitivity (just in case)
 
     # class methods
     def deposit(self, amount):
@@ -25,7 +26,11 @@ class BankAccount:
         return self.balance
     
     def add_interest(self):
-        interest = round(self.balance * 0.00083, 2) # added rounding to bring this number to 2 decimal places
+        if self.account_type == "savings":
+            interest = round(self.balance * 0.01, 2) # stretch challenge 1: savings interest of 1% monthly
+        else:
+            interest = round(self.balance * 0.00083, 2) # stretch challenge 1: original interest rate (now for checkings)
+        
         self.balance += interest
         print(f"You have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}.") 
 
@@ -61,15 +66,22 @@ print("\n")
 user_hermione.print_statement()
 print("\n---\n")
 
-# requirement #6 from the assignmemt instructions
-user_mitchell = BankAccount("Mitchell")
-user_mitchell.deposit(400000)
-user_mitchell.print_statement()
+# creating a checking account and a savings account for user Mitchell for stretch challenge 1
+user_mitchell_checking = BankAccount("Mitchell", "checking")
+user_mitchell_savings = BankAccount("Mitchell", "savings")
+
+# deposit $400,000 into both accounts
+user_mitchell_checking.deposit(400000)
+user_mitchell_savings.deposit(400000)
+user_mitchell_checking.print_statement()
+print("\n")
+user_mitchell_savings.print_statement()
+print("\n---\n")
+
+# add interest to each account and print statements
+user_mitchell_checking.add_interest()
+user_mitchell_checking.print_statement()
 print("\n")
 
-user_mitchell.add_interest()
-user_mitchell.print_statement()  
-print("\n")
-
-user_mitchell.withdraw(150)
-user_mitchell.print_statement() 
+user_mitchell_savings.add_interest()
+user_mitchell_savings.print_statement()
