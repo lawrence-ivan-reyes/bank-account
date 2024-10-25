@@ -1,5 +1,3 @@
-# moving all code outside of BankAccount & Bank classes to this main file for organization
-
 from bank_account import BankAccount
 
 # 3 different bank accounts
