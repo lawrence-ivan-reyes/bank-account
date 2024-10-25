@@ -134,5 +134,35 @@ while True:
         if not account_found:
             print("\nAccount number not found.")
 
+    elif option == '3':
+        account_number = int(input("\nEnter account number to deposit: "))
+        amount = float(input("Enter amount to deposit: "))
+        account_found = False
+        for account in bank:
+            if account.account_number == account_number:
+                account.deposit(amount)
+                account_found = True
+                break
+        if not account_found:
+            print("\nAccount number not found.")
+
+    elif option == '4':
+        account_number = int(input("\nEnter account number to withdraw: "))
+        amount = float(input("Enter amount to withdraw: "))
+        account_found = False
+        for account in bank:
+            if account.account_number == account_number:
+                account.withdraw(amount)
+                account_found = True
+                break
+        if not account_found:
+            print("\nAccount number not found.")
+
+    elif option == '5':
+        print("\nThank you for using Dominican Bank. See you next time!")
+        break
+
+    else:
+        print("\nInvalid. Please choose a valid option.")
 
 
