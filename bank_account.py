@@ -32,7 +32,7 @@ class BankAccount:
             interest = round(self.balance * 0.00083, 2) # stretch challenge 1: original interest rate (now for checkings)
         
         self.balance += interest
-        print(f"{self.full_name} ({self.account_type}) — you have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}.") 
+        print(f"{self.full_name} ({self.account_type}): you have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}.") 
 
     def print_statement(self):
         masked_account_number = "****" + str(self.account_number)[4:]
@@ -66,7 +66,7 @@ print("\n")
 user_hermione.print_statement()
 print("\n---\n")
 
-# creating a checking account and a savings account for user Mitchell for stretch challenge 1
+# stretch challenge 1: creating a checking account and a savings account Mitchell
 user_mitchell_checking = BankAccount("Mitchell", "checking")
 user_mitchell_savings = BankAccount("Mitchell", "savings")
 
@@ -94,9 +94,33 @@ def interest_all(accounts):
     for account in accounts:
         account.add_interest()
 
-interest_all(bank) # calling the above function
+interest_all(bank) 
 print("\n---\n")
 
 for account in bank:
     account.print_statement()
     print("\n---\n")
+
+# stretch challenge 3
+while True:
+    option = input("Welcome to the Dominican Bank! Please choose an option:\n(1) Create Account\n(2) Check Statement\n(3) Deposit\n(4) Withdraw\n(5) Exit\n> ")
+
+    if option == '1':
+        name = input("\nEnter full name: ")
+
+        while True:
+            account_type_input = input("Enter account type (1 for checking, 2 for savings): ").strip()
+            if account_type_input == '1':
+                account_type = "checking"
+                break
+            elif account_type_input == '2':
+                account_type = "savings"
+                break
+            else:
+                print("\nInvalid input for account type. Please enter 1 for checking or 2 for savings.") 
+
+    new_account = BankAccount(name, account_type)
+    bank.append(new_account)
+    print(f"\nSuccess! Account created for {name} with account number {new_account.account_number}.\n")
+
+
