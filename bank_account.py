@@ -21,7 +21,7 @@ class BankAccount:
             print(f"Amount Withdrawn: ${amount:.2f} > New Balance: ${self.balance:.2f}")
 
     def get_balance(self):
-        print(f"Your current account balance is ${self.balance:.2f}.")
+        print(f"Hi, {self.full_name}! Your current account balance is ${self.balance:.2f}.")
         return self.balance
     
     def add_interest(self):
@@ -60,3 +60,16 @@ user_hermione.add_interest()
 print("\n")
 user_hermione.print_statement()
 print("\n---\n")
+
+# requirement #6 from the assignmemt instructions
+user_mitchell = BankAccount("Mitchell")
+user_mitchell.deposit(400000)
+user_mitchell.print_statement()
+print("\n")
+
+user_mitchell.add_interest()
+user_mitchell.print_statement()  
+print("\n")
+
+user_mitchell.withdraw(150)
+user_mitchell.print_statement() 
