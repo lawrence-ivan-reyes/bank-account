@@ -1,7 +1,7 @@
 import random
 
 class BankAccount:
-    def __init__(self, full_name, account_type="checking"): # stretch challenge 1: initializing account type to checking at first
+    def __init__(self, full_name, account_type = "checking"): # stretch challenge 1: initializing account type to checking at first
         # attributes for the BankAccount class
         self.full_name = full_name
         self.account_number = random.randint(10000000, 99999999) # randomly generated 8 digit number, unique per account
@@ -32,7 +32,7 @@ class BankAccount:
             interest = round(self.balance * 0.00083, 2) # stretch challenge 1: original interest rate (now for checkings)
         
         self.balance += interest
-        print(f"You have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}.") 
+        print(f"{self.full_name} ({self.account_type}) — you have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}.") 
 
     def print_statement(self):
         masked_account_number = "****" + str(self.account_number)[4:]
@@ -85,3 +85,18 @@ print("\n")
 
 user_mitchell_savings.add_interest()
 user_mitchell_savings.print_statement()
+print("\n---\n")
+
+# stretch challenge 2
+bank = [user_harry, user_ron, user_hermione, user_mitchell_checking, user_mitchell_savings]
+
+def interest_all(accounts):
+    for account in accounts:
+        account.add_interest()
+
+interest_all(bank) # calling the above function
+print("\n---\n")
+
+for account in bank:
+    account.print_statement()
+    print("\n---\n")
