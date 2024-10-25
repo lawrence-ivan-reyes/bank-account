@@ -10,7 +10,7 @@ class BankAccount:
     # class methods
     def deposit(self, amount):
         self.balance += amount 
-        print(f"Amount Deposited: ${amount:.2f} > New Balance: ${self.balance:.2f}")
+        print(f"Amount Deposited: ${amount:.2f} > New Balance: ${self.balance:.2f}") # .2f across the entire project to have 2 decimal places across all dollar values in the output
 
     def withdraw(self, amount):
         amount += self.balance
@@ -28,10 +28,11 @@ class BankAccount:
     def add_interest(self):
         interest = self.balance * 0.00083
         self.balance += interest
-        print(f"You have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}") # should i cap the interest to 2 decimal places?
+        print(f"You have gained an interest of ${interest}, bringing your total current balance to: ${self.balance:.2f}") 
 
     def print_statement(self):
-        print(f"{self.full_name}\nAccount No.: {self.account_number}\nBalance: ${self.balance:.2f}") # figure out a way to hide the first 4 account numbers
+        masked_account_number = "****" + str(self.account_number)[4:]
+        print(f"{self.full_name}\nAccount No.: {masked_account_number}\nBalance: ${self.balance:.2f}")
 
 # 3 different bank accounts
 user_harry = BankAccount("Harry Potter")
@@ -60,5 +61,3 @@ user_hermione.add_interest()
 print("---")
 user_hermione.print_statement()
 print("\n")
-
-# note: fix decimal places 
