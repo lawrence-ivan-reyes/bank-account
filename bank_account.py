@@ -103,7 +103,7 @@ for account in bank:
 
 # stretch challenge 3
 while True:
-    option = input("Welcome to the Dominican Bank! Please choose an option:\n(1) Create Account\n(2) Check Statement\n(3) Deposit\n(4) Withdraw\n(5) Exit\n> ")
+    option = input("\nWelcome to the Dominican Bank! Please choose an option:\n(1) Create Account\n(2) Check Statement\n(3) Deposit\n(4) Withdraw\n(5) Exit\n> ")
 
     if option == '1':
         name = input("\nEnter full name: ")
@@ -119,8 +119,20 @@ while True:
             else:
                 print("\nInvalid input for account type. Please enter 1 for checking or 2 for savings.") 
 
-    new_account = BankAccount(name, account_type)
-    bank.append(new_account)
-    print(f"\nSuccess! Account created for {name} with account number {new_account.account_number}.\n")
+        new_account = BankAccount(name, account_type)
+        bank.append(new_account)
+        print(f"\nSuccess! Account created for {name} with account number {new_account.account_number}.\n")
+    
+    elif option == '2':
+        account_number = int(input("\nEnter account number to check statement: "))
+        account_found = False
+        for account in bank:
+            if account.account_number == account_number:
+                account.print_statement()
+                account_found = True
+                break
+        if not account_found:
+            print("\nAccount number not found.")
+
 
 
