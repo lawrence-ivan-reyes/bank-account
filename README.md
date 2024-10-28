@@ -12,13 +12,13 @@ Bank Account is a text-based Python program that simulates a bank—using object
 - Interact CLI to manage multiple accounts and perform transactions
 
 ### ❗️ How To Use
-1. Clone the Repository
-**HTTPS:** `git clone https://github.com/lawrence-ivan-reyes/bank-account.git`
-**SSH:** `git clone git@github.com:lawrence-ivan-reyes/bank-account.git`
-**GitHub CLI:** `gh repo clone lawrence-ivan-reyes/bank-account`
+1. Clone the Repository  
+**HTTPS:** `git clone https://github.com/lawrence-ivan-reyes/bank-account.git`  
+**SSH:** `git clone git@github.com:lawrence-ivan-reyes/bank-account.git`  
+**GitHub CLI:** `gh repo clone lawrence-ivan-reyes/bank-account`  
 
 2. Run the Program
-Run the `main.py` file to start interacting with the banking application.
+Run the `main.py` file to start interacting with the banking application.  
 `python3 main.py`
 
 3. Program Features
@@ -47,13 +47,13 @@ Each month, the balance accrues interest:
 ### 🌐 Example Output
 Here is an example account interaction output:
 
-`Welcome to the Royal Bank of Dominican!`
-`Please choose an option:`
-`(1) Create Account`
-`(2) Check Statement`
-`(3) Deposit`
-`(4) Withdraw`
-`(5) Exit`
+`Welcome to the Royal Bank of Dominican!`  
+`Please choose an option:`  
+`(1) Create Account`  
+`(2) Check Statement`  
+`(3) Deposit`  
+`(4) Withdraw`  
+`(5) Exit`  
 
 ---
 
