@@ -17,7 +17,7 @@ Bank Account is a text-based Python program that simulates a bank—using object
 **SSH:** `git clone git@github.com:lawrence-ivan-reyes/bank-account.git`  
 **GitHub CLI:** `gh repo clone lawrence-ivan-reyes/bank-account`  
 
-2. Run the Program
+2. Run the Program  
 Run the `main.py` file to start interacting with the banking application.  
 `python3 main.py`
 
@@ -28,13 +28,13 @@ Run the `main.py` file to start interacting with the banking application.
 - **Withdraw Funds:** Withdraw a specific amount, with overdraft fees if balance is insufficient.
 - **Exit:** End the session.
 
-4. Example Commands
+4. Example Commands  
 After starting the program, use the options provided in the menu to create accounts, deposit or withdraw funds, and check statements.
 
-5. Interest Calculation
+5. Interest Calculation  
 Each month, the balance accrues interest:
-- Checking Account: 0.083% interest per month.
-- Savings Account: 1% interest per month.
+- **Checking Account:** 0.083% interest per month.
+- **Savings Account:** 1% interest per month.
 
 ---
 
