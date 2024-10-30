@@ -65,7 +65,7 @@ for account in bank:
 
 # stretch challenge 3
 while True:
-    option = input("Welcome to the Royal Bank of Dominican! Please choose an option:\n(1) Create Account\n(2) Check Statement\n(3) Deposit\n(4) Withdraw\n(5) Exit\n> ")
+    option = input("\nWelcome to the Royal Bank of Dominican! Please choose an option:\n(1) Create Account\n(2) Check Statement\n(3) Deposit\n(4) Withdraw\n(5) Exit\n> ")
 
     if option == '1':
         name = input("\nEnter full name: ")
